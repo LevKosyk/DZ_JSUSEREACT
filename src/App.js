@@ -16,10 +16,11 @@ function App() {
     <Router>
       <UserProvider>
         <Routes>
-          <Route path='/users' element={<PrivateRoute><ListScreen /></PrivateRoute>} />
-          <Route path='/users/:id/update' element={<PrivateRoute><UpdateScreen /></PrivateRoute>} />
-          <Route path='/login' element={<LoginScreen />} />
-          <Route path='/register' element={<RegisterScreen />} />
+          <Route path="/" element={<Navigate to="/login" />} />
+          <Route path="/users" element={<ListScreen /> }/>
+          <Route path="/users/:id/update" element={<UpdateScreen />} />
+          <Route path="/login" element={<LoginScreen />} />
+          <Route path="/register" element={<RegisterScreen />} />
         </Routes>
       </UserProvider>
     </Router>
