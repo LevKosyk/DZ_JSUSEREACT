@@ -4,17 +4,14 @@ import { UserContext } from '../../context/UserContext';
 import { useNavigate, useParams } from "react-router-dom";
 
 const UpdateScreen = () => {
-    const { id } = useParams(); // Получение id из URL
+    const { id } = useParams(); 
     const { UpdateUser } = useContext(UserContext);
     const navigate = useNavigate();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    // Fetch user data when component mounts to populate the form
     useEffect(() => {
-        // Здесь можно добавить код для получения данных пользователя, если нужно
-        // Например, можно запросить данные пользователя с серверной части, чтобы отобразить текущие email и password
     }, [id]);
 
     const handleSubmit = (e) => {
@@ -26,10 +23,10 @@ const UpdateScreen = () => {
         }
 
         const user = { email, password };
-        UpdateUser(user, id);  // Отправка обновленных данных на сервер
+        UpdateUser(user, id);  
         setEmail('');
         setPassword('');
-        navigate("/users");  // Перенаправление на страницу пользователей после успешного обновления
+        navigate("/users"); 
     };
 
     return (
